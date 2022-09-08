@@ -57,6 +57,8 @@ public class MovieService {
     }
     public List<String> getMovieWithHighestRating(Map<Movie, Integer> map) {
         //Create a ArrayList object of type String
+        ArrayList<String> movieWithHighestRating = new ArrayList<>();
+
         //get the first value from the map and store it in the variable max
 
         // Use entrySet().iterator().next() method to retrieve the first value of Map object
