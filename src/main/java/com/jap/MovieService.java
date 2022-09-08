@@ -19,8 +19,15 @@ public class MovieService {
     public Map<Movie, Integer> getMovieWithRating() {
 
         //create five movie object by calling Movie class parameterized constructor
+        Movie movie1 = new Movie(1, "Avatar", "science", "23/05/2007");
+        Movie movie2 = new Movie(2, "Goodbye", "comedy", "13/05/2017");
+        Movie movie3 = new Movie(3, "Thor", "action", "23/05/1907");
+        Movie movie4 = new Movie(4, "IronMan", "action", "23/05/2010");
+        Movie movie5 = new Movie(5, "Lord Of The Rings", "history", "13/05/2012");
+
 
         //create HashMap object and add all the Movie object inside it
+
 
         //Key will be movie object and value will be rating ranging from 1 to 5
 
