@@ -7,11 +7,11 @@ public class MovieService {
     public static void main(String[] args) {
         MovieService movieService = new MovieService();
         Map<Movie, Integer> map = movieService.getMovieWithRating();
-        Set set = movieService.getMovieNameWithRating4(map, 4);
+        Set<String> set = movieService.getMovieNameWithRating4(map, 4);
         System.out.println("Rating 4" + set);
-        Map map1 = movieService.getAllMoviesWithComedy(map);
+        Map<String, String> map1 = movieService.getAllMoviesWithComedy(map);
         System.out.println("Comedy Movie " + map1);
-        List list = movieService.getMovieWithHighestRating(map);
+        List<String> list = movieService.getMovieWithHighestRating(map);
         System.out.println("--------------");
         System.out.println("Highest Rating " + list);
     }
@@ -41,24 +41,22 @@ public class MovieService {
 
     public Set<String> getMovieNameWithRating4(Map<Movie, Integer> map, int rating) {
         //Create a TreeSet object
-        TreeSet<String> SortedMovieNames = new TreeSet<>();
+        TreeSet<String> movieWithSpecificRatings = new TreeSet<>();
 
         //Use entrySet() method to iterate through the map object
-
-
-        //retrieve all the movies name having rating as 4
-
-        //Store the movie name in TreeSet object
-
+        for (Map.Entry<Movie, Integer> movieList : map.entrySet()) {
+            Movie key = movieList.getKey();
+            //retrieve all the movies name having rating as 4
+            if (movieList.getValue() == rating) {
+                //Store the movie name in TreeSet object
+                movieWithSpecificRatings.add(key.getMovieName());
+            }
+        }
         //return the TreeSet object
-
-        return null;
+        return movieWithSpecificRatings;
     }
-
     public List<String> getMovieWithHighestRating(Map<Movie, Integer> map) {
         //Create a ArrayList object of type String
-
-
         //get the first value from the map and store it in the variable max
 
         // Use entrySet().iterator().next() method to retrieve the first value of Map object
