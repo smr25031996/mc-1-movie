@@ -41,8 +41,10 @@ public class MovieService {
 
     public Set<String> getMovieNameWithRating4(Map<Movie, Integer> map, int rating) {
         //Create a TreeSet object
+        TreeSet<String> SortedMovieNames = new TreeSet<>();
 
         //Use entrySet() method to iterate through the map object
+
 
         //retrieve all the movies name having rating as 4
 
