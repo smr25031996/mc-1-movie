@@ -66,19 +66,18 @@ public class MovieService {
         for (Map.Entry<Movie, Integer> movies : map.entrySet()) {
             Integer max = (Integer) ratings[0];
             if ((max < movies.getValue())) {
-                max = movies.getValue();
                 //get the name of the movie with the highest rating and add it in the List created
                 movieWithHighestRating.add(movie.getMovieName());
             }
         }
         //return the List object
 
-        List l = new ArrayList();
         return movieWithHighestRating;
     }
 
     public Map<String, String> getAllMoviesWithComedy(Map<Movie, Integer> map) {
         //Create a Map object
+        Map<String, String> comedyMovies = new HashMap<>();
 
         //use entrySet to iterate through the Map object
 
