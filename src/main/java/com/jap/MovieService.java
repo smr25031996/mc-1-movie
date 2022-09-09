@@ -55,21 +55,26 @@ public class MovieService {
         //return the TreeSet object
         return movieWithSpecificRatings;
     }
+
     public List<String> getMovieWithHighestRating(Map<Movie, Integer> map) {
         //Create a ArrayList object of type String
         ArrayList<String> movieWithHighestRating = new ArrayList<>();
-
+        Movie movie = new Movie();
         //get the first value from the map and store it in the variable max
-
+        Object[] ratings = map.values().toArray();
         // Use entrySet().iterator().next() method to retrieve the first value of Map object
-
-
-        //get the name of the movie with the highest rating and add it in the List created
-
+        for (Map.Entry<Movie, Integer> movies : map.entrySet()) {
+            Integer max = (Integer) ratings[0];
+            if ((max < movies.getValue())) {
+                max = movies.getValue();
+                //get the name of the movie with the highest rating and add it in the List created
+                movieWithHighestRating.add(movie.getMovieName());
+            }
+        }
         //return the List object
 
         List l = new ArrayList();
-        return l;
+        return movieWithHighestRating;
     }
 
     public Map<String, String> getAllMoviesWithComedy(Map<Movie, Integer> map) {
