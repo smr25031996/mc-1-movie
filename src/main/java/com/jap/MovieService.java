@@ -16,6 +16,7 @@ public class MovieService {
         System.out.println("Highest Rating " + list);
     }
 
+    // This function is creating a Map object and adding the movie name as key and rating as value.
     public Map<Movie, Integer> getMovieWithRating() {
 
         //create five movie object by calling Movie class parameterized constructor
@@ -39,6 +40,14 @@ public class MovieService {
         return movieDetails;
     }
 
+    /**
+     * We iterate through the map object using entrySet() method and retrieve all the movies name having rating as 4 and
+     * store the movie name in TreeSet object
+     *
+     * @param map    The map object that contains the movie name and its rating.
+     * @param rating The rating of the movie.
+     * @return A TreeSet object containing all the movie names having rating as 4.
+     */
     public Set<String> getMovieNameWithRating4(Map<Movie, Integer> map, int rating) {
         //Create a TreeSet object
         TreeSet<String> movieWithSpecificRatings = new TreeSet<>();
@@ -56,6 +65,12 @@ public class MovieService {
         return movieWithSpecificRatings;
     }
 
+    /**
+     * The above function returns the name of the movie with the highest rating.
+     *
+     * @param map A Map object that contains the movie name and its rating
+     * @return A list of movies with the highest rating
+     */
     public List<String> getMovieWithHighestRating(Map<Movie, Integer> map) {
         //Create a ArrayList object of type String
         ArrayList<String> movieWithHighestRating = new ArrayList<>();
@@ -76,19 +91,25 @@ public class MovieService {
         return movieWithHighestRating;
     }
 
+    /**
+     * This function takes a Map object as an argument and returns a Map object
+     *
+     * @param map A Map object that contains the movie name as key and the release date as value.
+     * @return A Map object with movie name as key and release date as value.
+     */
     public Map<String, String> getAllMoviesWithComedy(Map<Movie, Integer> map) {
         //Create a Map object
         Map<String, String> comedyMovies = new HashMap<>();
         //use entrySet to iterate through the Map object
         for (Map.Entry<Movie, Integer> entries : map.entrySet()) {
+
+            //get all the movies name and their released date for the movie of genre "comedy"
             if (entries.getKey().getGenre().equals("comedy")) {
+
+                //store movie name with release date in the above created Map object and return the Map object
                 comedyMovies.put(entries.getKey().getMovieName(), entries.getKey().getReleaseDate());
             }
         }
-
-        //get all the movies name and their released date for the movie of genre "comedy"
-
-        //store movie name with release date in the above created Map object and return the Map object
 
         return comedyMovies;
 
